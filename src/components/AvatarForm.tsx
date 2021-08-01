@@ -16,17 +16,6 @@ interface SelectProps {
   onChange?: (value: string) => void
 }
 
-// ref: https://stackoverflow.com/a/1714899/25077
-const serializeQuery = function (obj: any) {
-  const str = []
-  for (const p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
-    }
-  }
-  return str.join('&')
-}
-
 class OptionSelect extends React.Component<SelectProps> {
   render () {
     const { controlId, label, value, children } = this.props
@@ -139,17 +128,6 @@ export default class AvatarForm extends React.Component<Props> {
         {selects}
         <FormGroup className='row'>
           <Col
-            className={`offset-sm-${labelCol}`}
-            smOffset={labelCol}
-            sm={inputCol}>
-            More options coming soon,{' '}
-            <a href='http://eepurl.com/c_7fN9' target='_blank'>
-              subscribe for updates
-            </a>
-          </Col>
-        </FormGroup>
-        <FormGroup className='row'>
-          <Col
             className={'offset-sm-' + labelCol}
             smOffset={labelCol}
             sm={inputCol}>
@@ -179,24 +157,6 @@ export default class AvatarForm extends React.Component<Props> {
               <i className='fa fa-code' />{' '}
               {displayingImg ? 'Hide <img>' : 'Show <img>'}
             </Button>
-            <div style={{ marginTop: '10px' }}>
-              <iframe
-                src={
-                  'https://platform.twitter.com/widgets/tweet_button.html?' +
-                  serializeQuery({
-                    text: 'I just created my avataaars here 😆',
-                    url: document.location.href,
-                    hashtags: 'avataaars,avatar',
-                    size: 'l',
-                    lang: 'en'
-                  })
-                }
-                width='140'
-                height='28'
-                title='Twitter Tweet Button'
-                style={{ border: 0, overflow: 'hidden' }}
-              />
-            </div>
           </Col>
         </FormGroup>
       </Form>
