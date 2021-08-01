@@ -4,9 +4,8 @@ import * as FileSaver from 'file-saver'
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { Avatar, AvatarStyle, OptionContext, allOptions } from 'avataaars'
+import { Avatar, AvatarStyle, OptionContext, allOptions } from '@bugfix/avataaars'
 import { Button } from 'react-bootstrap'
-import { Helmet } from 'react-helmet'
 import {
   UrlQueryParamTypes,
   UrlUpdateTypes,
@@ -95,8 +94,6 @@ export class Main extends React.Component<Props, State> {
   render () {
     const { avatarStyle } = this.props
     const { displayComponentCode, displayComponentImg } = this.state
-    const title = 'Avataaars Generator - Generate your own avataaars!'
-    const imageURL = process.env.REACT_APP_IMG_RENDERER_URL + location.search
     return (
       <main role='main'>
         <header className='header clearfix'>
@@ -112,21 +109,6 @@ export class Main extends React.Component<Props, State> {
             </Button>
           </h2>
         </header>
-        <Helmet>
-          <meta property='og:title' content={title} />
-          <meta property='og:site_name' content='Avataaars Generator' />
-          <meta property='og:url' content={document.location.href} />
-          <meta property='og:image' content={imageURL} />
-          <meta
-            property='og:description'
-            content='Avataaars Generator is a free online tool for generating your own avatar'
-          />
-          <meta name='twitter:card' content='photo' />
-          <meta name='twitter:site' content='Avataaars Generator' />
-          <meta name='twitter:title' content={title} />
-          <meta name='twitter:image' content={imageURL} />
-          <meta name='twitter:url' content={document.location.href} />
-        </Helmet>
         <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <Avatar ref={this.onAvatarRef} avatarStyle={avatarStyle} />
         </div>
@@ -208,7 +190,7 @@ export class Main extends React.Component<Props, State> {
   }
 
   private onDownloadPNG = () => {
-    const svgNode = ReactDOM.findDOMNode(this.avatarRef!)
+    const svgNode = ReactDOM.findDOMNode(this.avatarRef!) as HTMLElement
     const canvas = this.canvasRef!
     const ctx = canvas.getContext('2d')!
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -235,7 +217,7 @@ export class Main extends React.Component<Props, State> {
   }
 
   private onDownloadSVG = () => {
-    const svgNode = ReactDOM.findDOMNode(this.avatarRef!)
+    const svgNode = ReactDOM.findDOMNode(this.avatarRef!) as HTMLElement
     const data = svgNode.outerHTML
     const svg = new Blob([data], { type: 'image/svg+xml' })
     this.triggerDownload(svg, 'avataaars.svg')

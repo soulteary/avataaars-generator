@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { AvatarStyle, Option, OptionContext } from 'avataaars'
+import { AvatarStyle, Option, OptionContext } from '@bugfix/avataaars'
 import {
   Button,
   Col,

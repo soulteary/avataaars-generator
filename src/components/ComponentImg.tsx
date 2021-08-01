@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import { AvatarStyle, OptionContext, allOptions } from 'avataaars'
+import { AvatarStyle, OptionContext, allOptions } from '@bugfix/avataaars'
 
 export interface Props {
   avatarStyle: AvatarStyle

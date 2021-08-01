@@ -2,7 +2,7 @@ import '../assets/App.css'
 
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import { Avatar, AvatarStyle, OptionContext, allOptions } from 'avataaars'
+import { Avatar, AvatarStyle, OptionContext, allOptions } from '@bugfix/avataaars'
 import {
   UrlQueryParamTypes,
   UrlUpdateTypes,
