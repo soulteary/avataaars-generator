@@ -160,20 +160,20 @@ export default class AvatarForm extends React.Component<Props> {
               <i className='fa fa-download' /> PNG
             </Button>{' '}
             <Button
-              bsStyle='secondary'
+              bsStyle='default'
               type='submit'
               onClick={this.onDownloadSVG}>
               <i className='fa fa-download' /> SVG
             </Button>{' '}
             <Button
-              bsStyle='secondary'
+              bsStyle='default'
               type='submit'
               onClick={this.onToggleCode}>
               <i className='fa fa-code' />{' '}
               {displayingCode ? 'Hide React' : 'Show React'}
             </Button>{' '}
             <Button
-              bsStyle='secondary'
+              bsStyle='default'
               type='submit'
               onClick={this.onToggleImg}>
               <i className='fa fa-code' />{' '}
