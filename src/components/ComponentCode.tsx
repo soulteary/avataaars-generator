@@ -47,7 +47,7 @@ ${propsStr}
         <h3 style={{ color: '#6A39D7' }}>
           React Code{' '}
           <a
-            href='https://github.com/fangpenlin/avataaars'
+            href='https://github.com/soulteary/avataaars'
             style={{ fontSize: '0.8em' }}
             target='_blank'>
             <i className='fa fa-github' /> Repo
@@ -58,11 +58,11 @@ ${propsStr}
           first. You can do it by running
         </p>
         <pre>
-          <code>yarn add avataaars</code>
+          <code>yarn add @bugfix/avataaars</code>
         </pre>
         <p>or</p>
         <pre>
-          <code>npm install avataaars --save</code>
+          <code>npm install @bugfix/avataaars --save</code>
         </pre>
         <p>
           if you are using npm. Once you have avataaars package installed, you
